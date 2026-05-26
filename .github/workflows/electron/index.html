@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Pro Studio</title>
+</head>
+<body style="margin:0; background:#111; color:white;">
+
+  <div id="app"></div>
+
+  <script>
+    const canvas = document.createElement("canvas")
+    canvas.width = 1200
+    canvas.height = 800
+    document.body.appendChild(canvas)
+
+    const ctx = canvas.getContext("2d")
+
+    let drawing = false
+
+    canvas.onmousedown = (e) => {
+      drawing = true
+      ctx.beginPath()
+      ctx.moveTo(e.offsetX, e.offsetY)
+    }
+
+    canvas.onmousemove = (e) => {
+      if (!drawing) return
+      ctx.lineTo(e.offsetX, e.offsetY)
+      ctx.strokeStyle = "white"
+      ctx.lineWidth = 3
+      ctx.stroke()
+    }
+
+    canvas.onmouseup = () => {
+      drawing = false
+    }
+  </script>
+
+</body>
+</html>
