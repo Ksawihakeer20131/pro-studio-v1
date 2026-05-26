@@ -1,0 +1,29 @@
+{
+  "name": "pro-studio",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.0.0",
+    "vite": "^5.0.0",
+    "concurrently": "^9.0.0"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "konva": "^9.0.0",
+    "react-konva": "^18.0.0"
+  },
+  "build": {
+    "appId": "com.prostudio.app",
+    "productName": "Pro Studio",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
